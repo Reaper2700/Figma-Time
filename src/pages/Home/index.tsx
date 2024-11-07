@@ -5,8 +5,8 @@ import zod, { string } from "zod"
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
 import { differenceInSeconds, min, startOfDay } from "date-fns";
-import { NewCycleForm } from "./newCycleForm";
-import { Countdown } from "./countdown";
+import { NewCycleForm } from "./componentes/newCycleForm";
+import { Countdown } from "./componentes/countdown";
 
 const newCycloFormValidationSchema = zod.object({
     task: zod.string().min(1, 'Informe a tarefa'),
