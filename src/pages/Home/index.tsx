@@ -21,9 +21,9 @@ interface Cycle {
 interface CyclesContextType {
     activeCycle: Cycle | undefined;
     activeCycleId: string | null;
-    markCurrentCycleAsFinished: () => void
-    amountSecondsPassed: number
+    amountSecondsPassed: number;
     setSecondsPassed: (seconds: number) => void
+    markCurrentCycleAsFinished: () => void
 }
 
 export const CyclesContext = createContext({} as CyclesContextType)
@@ -69,8 +69,7 @@ export function Home() {
 
     }
 
-
-    function handleCreateNewCiclo(data: NewCycleFormData) {
+    function handleCreateNewCycle(data: NewCycleFormData) {
         const id = String(new Date().getTime())
 
         const newCyclo: Cycle = {
@@ -107,7 +106,7 @@ export function Home() {
     console.log(cycles)
     return (
         <HomeContainer>
-            <form onSubmit={handleSubmit(handleCreateNewCiclo)} action="">
+            <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
                 <CyclesContext.Provider value={{
                     activeCycle,
                     activeCycleId,
